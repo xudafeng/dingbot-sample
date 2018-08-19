@@ -1,0 +1,35 @@
+{
+  "name": "dingbot-sample",
+  "version": "0.1.0",
+  "description": "dingbot-sample",
+  "keywords": ["dingbot-sample"],
+  "bin": {
+    "dingbot-sample": "./bin/dingbot-sample"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xudafeng/dingbot-sample.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "co-mocha": "*",
+    "eslint": "*",
+    "eslint-plugin-mocha": "^4.11.0",
+    "git-contributor": "*",
+    "mocha": "*",
+    "nyc": "*",
+    "pre-commit": "*"
+  },
+  "scripts": {
+    "ci": "npm run lint && npm run test",
+    "test": "nyc --reporter=lcov --reporter=text mocha",
+    "lint": "eslint . --fix",
+    "contributor": "git-contributor"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "license": "MIT"
+}
