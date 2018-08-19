@@ -2,7 +2,10 @@
   "name": "dingbot-sample",
   "version": "0.1.0",
   "description": "dingbot-sample",
-  "keywords": ["dingbot-sample"],
+  "keywords": [
+    "dingbot",
+    "sample"
+  ],
   "bin": {
     "dingbot-sample": "./bin/dingbot-sample"
   },
@@ -12,6 +15,7 @@
     "url": "git://github.com/xudafeng/dingbot-sample.git"
   },
   "dependencies": {
+    "dingtalk-robot-sender": "^1.1.1"
   },
   "devDependencies": {
     "co-mocha": "*",
