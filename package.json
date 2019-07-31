@@ -7,7 +7,8 @@
     "sample"
   ],
   "bin": {
-    "dingbot-sample": "./bin/dingbot-sample"
+    "dingbot-sample": "./bin/dingbot-sample.js",
+    "dingbot-curl": "./bin/curl.js"
   },
   "main": "index.js",
   "repository": {
@@ -15,7 +16,8 @@
     "url": "git://github.com/xudafeng/dingbot-sample.git"
   },
   "dependencies": {
-    "dingtalk-robot-sender": "^1.1.1"
+    "dingtalk-robot-sender": "^1.1.1",
+    "urllib": "^2.34.0"
   },
   "devDependencies": {
     "co-mocha": "*",
