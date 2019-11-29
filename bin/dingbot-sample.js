@@ -4,9 +4,7 @@
 
 const bot = require('../lib/dingbot-sample');
 
-const {
-  WEBHOOK_URL,
-} = process.env;
+const { WEBHOOK_URL } = process.env;
 
 console.log(WEBHOOK_URL);
 

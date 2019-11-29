@@ -4,11 +4,11 @@
 
 const urllib = require('urllib');
 
-const {
-  WEBHOOK_URL,
-} = process.env;
+const signFunc = require('../lib/sign');
 
-console.log(WEBHOOK_URL);
+const { WEBHOOK_URL, secret } = process.env;
+
+console.log(WEBHOOK_URL, secret);
 
 async function run() {
   const text = [
@@ -30,8 +30,13 @@ async function run() {
       text,
     },
   };
+  let singStr = '';
+  if (secret) {
+    const timestamp = Date.now();
+    singStr = `&timestamp=${timestamp}&sign=${signFunc(secret, `${timestamp}\n${secret}`)}`;
+  }
   console.log(dingtalkMessage);
-  await urllib.request(WEBHOOK_URL, {
+  await urllib.request(`${WEBHOOK_URL}&${singStr}`, {
     method: 'POST',
     data: dingtalkMessage,
     headers: {
